@@ -40,7 +40,7 @@ external_link:
   exclude: ''
 filename_case: 0
 render_drafts: false
-post_asset_folder: false
+post_asset_folder: true
 relative_link: false
 future: true
 highlight:
@@ -104,4 +104,4 @@ theme: hexo-theme-Kaze
 deploy:
   type: git
   repo: git@github.com:Eyjafjalla6/Eyjafjalla6.github.io.git
-  branch: main
+  branch: gh-pages
