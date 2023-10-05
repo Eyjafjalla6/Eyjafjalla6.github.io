@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="zh-CN.yml | en">
+  <head>
+  <meta charset="UTF-8">
+  <meta 
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <meta 
+    http-equiv="X-UA-Compatible" 
+    content="ie=edge">
+  <meta 
+    name="theme-color" 
+    content="#fff" 
+    id="theme-color">
+  <meta 
+    name="description" 
+    content="jkloli的博客">
+  <link 
+    rel="icon" 
+    href="/img/logo.jpg">
+  <title>python常用库</title>
+  
+    
+      <meta 
+        property="og:title" 
+        content="python常用库">
+    
+    
+      <meta 
+        property="og:url" 
+        content="https://eyjafjalla6.github.io/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/index.html">
+    
+    
+      <meta 
+        property="og:img" 
+        content="/img/authorhead.jpg">
+    
+    
+    
+      <meta 
+        property="og:type" 
+        content="article">
+      <meta 
+        property="og:article:published_time" 
+        content="2023-08-24">
+      <meta 
+        property="og:article:modified_time" 
+        content="2023-08-24">
+      <meta 
+        property="og:article:author" 
+        content="jkloli">
+      
+        
+          <meta 
+            property="og:article:tag" 
+            content="python">
+        
+      
+    
+  
+  
+  <link rel="preload" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css" as="style" >
+  <link rel="preload" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css" as="style" >
+  <link rel="preload" href="/css/main.css" as="style" >
+  
+  <link rel="modulepreload" href="//instant.page/5.1.0">
+  
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1946621_i1kgafibvw.css">
+  
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1952792_89b4ac4k4up.css">
+  
+  
+  
+    <link rel="stylesheet" href="/js/lib/lightbox/baguetteBox.min.css">
+  
+  <script>
+    function loadScript(url, cb) {
+      var script = document.createElement('script');
+      script.src = url;
+      if (cb) script.onload = cb;
+      script.async = true;
+      document.body.appendChild(script);
+    }
+    function loadCSS(href, data, attr) {
+      var sheet = document.createElement('link');
+      sheet.ref = 'stylesheet';
+      sheet.href = href;
+      sheet.dataset[data] = attr;
+      document.head.appendChild(sheet);
+    }
+    function changeCSS(cssFile, data, attr) {
+      var oldlink = document.querySelector(data);
+      var newlink = document.createElement("link");
+      newlink.setAttribute("rel", "stylesheet");
+      newlink.setAttribute("href", cssFile);
+      newlink.dataset.prism = attr;
+      document.head.replaceChild(newlink, oldlink);
+    }
+  </script>
+  
+    
+  
+  <script>
+    // control reverse button
+    var reverseDarkList = {
+      dark: 'light',
+      light: 'dark'
+    };
+    var themeColor = {
+      dark: '#1c1c1e',
+      light: '#fff'
+    }
+    // get the data of css prefers-color-scheme
+    var getCssMediaQuery = function() {
+      return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    };
+    // reverse current darkmode setting function
+    var reverseDarkModeSetting = function() {
+      var setting = localStorage.getItem('user-color-scheme');
+      if(reverseDarkList[setting]) {
+        setting = reverseDarkList[setting];
+      } else if(setting === null) {
+        setting = reverseDarkList[getCssMediaQuery()];
+      } else {
+        return;
+      }
+      localStorage.setItem('user-color-scheme', setting);
+      return setting;
+    };
+    // apply current darkmode setting
+  </script>
+  
+    <script>
+      var setDarkmode = function(mode) {
+      var setting = mode || localStorage.getItem('user-color-scheme');
+      if(setting === getCssMediaQuery()) {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else if(reverseDarkList[setting]) {
+        document.documentElement.setAttribute('data-user-color-scheme', setting);
+        document.getElementById('theme-color').content = themeColor[setting];
+        document.getElementById('theme-color').dataset.mode = setting;
+      } else {
+        document.documentElement.removeAttribute('data-user-color-scheme');
+        localStorage.removeItem('user-color-scheme');
+        document.getElementById('theme-color').content = themeColor[getCssMediaQuery()];
+        document.getElementById('theme-color').dataset.mode = getCssMediaQuery();
+      }
+    };
+    setDarkmode();
+    </script>
+  
+  
+  
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.js" as="script">
+    <link rel="preload" href="/js/lib/lightbox/baguetteBox.min.css" as="style" >
+  
+  
+    <link rel="preload" href="/js/lib/lozad.min.js" as="script">
+  
+  
+  
+  
+  
+  
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+  <body>
+    <div class="wrapper">
+       
+      <nav class="navbar">
+  <div class="navbar-logo">
+    <a class="navbar-logo-main" href="/">
+      
+        <img 
+          class="navbar-logo-img"
+          width="32"
+          height="32"
+          src="/img/logo.jpg" 
+          alt="blog logo">
+      
+      <span class="navbar-logo-dsc">jkloli's blog</span>
+      </a>
+  </div>
+  <div class="navbar-menu">
+    
+      <a 
+        href="/" 
+        class="navbar-menu-item">
+        
+          Home
+        
+      </a>
+    
+      <a 
+        href="/archives" 
+        class="navbar-menu-item">
+        
+          Archive
+        
+      </a>
+    
+      <a 
+        href="/tags" 
+        class="navbar-menu-item">
+        
+          Tags
+        
+      </a>
+    
+      <a 
+        href="/categories" 
+        class="navbar-menu-item">
+        
+          Categories
+        
+      </a>
+    
+      <a 
+        href="/about" 
+        class="navbar-menu-item">
+        
+          About
+        
+      </a>
+    
+      <a 
+        href="/links" 
+        class="navbar-menu-item">
+        
+          Friends
+        
+      </a>
+    
+    <button 
+      class="navbar-menu-item darknavbar navbar-menu-btn" 
+      aria-label="Toggle dark mode"
+      id="dark">
+      <i class="iconfont icon-weather"></i>
+    </button>
+    <button 
+      class="navbar-menu-item searchnavbar navbar-menu-btn" 
+      aria-label="Toggle search"
+      id="search">
+      <!-- <i 
+        class="iconfont icon-search" 
+        style="font-size: 1.2rem; font-weight: 400;">
+      </i> -->
+      <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
+        class="iconify iconify--ion" width="28" height="28" preserveAspectRatio="xMidYMid meet" viewBox="0 0 512 512">
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M256 80a176 176 0 1 0 176 176A176 176 0 0 0 256 80Z"></path>
+        <path fill="none" stroke="currentColor" stroke-miterlimit="10" stroke-width="28"
+          d="M232 160a72 72 0 1 0 72 72a72 72 0 0 0-72-72Z"></path>
+        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="28"
+          d="M283.64 283.64L336 336"></path>
+      </svg>
+    </button>
+  </div>
+</nav> 
+      
+      <div 
+        id="local-search" 
+        style="display: none">
+        <input
+          class="navbar-menu-item"
+          id="search-input"
+          placeholder="请输入搜索内容..." />
+        <div id="search-content"></div>
+      </div>
+      
+      <div class="section-wrap">
+        <div class="container">
+          <div class="columns">
+            <aside class="left-column">
+              
+              <div class="card card-author">
+                
+  <img 
+    src="/img/authorhead.jpg" 
+    class="author-img"
+    width="88"
+    height="88"
+    alt="author avatar">
+
+<p class="author-name">jkloli</p>
+<p class="author-description">彩笔的秘密基地</p>
+<div class="author-message">
+  <a 
+    class="author-posts-count" 
+    href="/archives">
+    <span>7</span>
+    <span>Posts</span>
+  </a>
+  <a 
+    class="author-categories-count" 
+    href="/categories">
+    <span>5</span>
+    <span>Categories</span>
+  </a>
+  <a 
+    class="author-tags-count" 
+    href="/tags">
+    <span>1</span>
+    <span>Tags</span>
+  </a>
+</div>
+
+              </div>
+               <div class="sticky-tablet">
+  
+  
+    <article class="display-when-two-columns spacer">
+      <div class="card card-content toc-card">
+        <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>TOC
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+      </div>
+    </article>
+  
+  
+  <article class="card card-content categories-widget">
+    <div class="categories-card">
+  <div class="categories-header">
+    <i 
+      class="iconfont icon-fenlei" 
+      style="padding-right: 2px;">
+    </i>Categories
+  </div>
+  <div class="categories-list">
+    
+      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
+        <div class="categories-list-item">
+          计算机基础
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+        <div class="categories-list-item">
+          计算机语言基础
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E6%B5%8B%E8%AF%95/">
+        <div class="categories-list-item">
+          测试
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%A4%A7%E4%B8%80/">
+        <div class="categories-list-item">
+          大一
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+      <a href="/categories/%E5%A4%A7%E4%BA%8C/">
+        <div class="categories-list-item">
+          大二
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  <article class="card card-content tags-widget">
+    <div class="tags-card">
+  <div class="tags-header">
+    <i 
+      class="iconfont icon-biaoqian" 
+      style="padding-right: 2px;">
+    </i>hot tags
+  </div>
+  <div class="tags-list">
+    
+      <a 
+        href="/tags/python/" 
+        title="python">
+        <div class="tags-list-item">python</div>
+      </a>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+            <main class="main-column">
+              
+<article class="card card-content">
+  <header>
+    <h1 class="post-title">
+      python常用库
+    </h1>
+  </header>
+  <div class="post-meta post-show-meta">
+    <time datetime="2023-08-24T07:33:11.000Z">
+      <i 
+        class="iconfont icon-calendar" 
+        style="margin-right: 2px;">
+      </i>
+      <span>2023-08-24</span>
+    </time>
+    
+      <span class="dot"></span>
+      
+        <a 
+          href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" 
+          class="post-meta-link">
+          计算机语言基础
+        </a>
+      
+    
+    
+      <span class="dot"></span>
+      <span>3k words</span>
+    
+  </div>
+  
+    <div 
+      class="post-meta post-show-meta" 
+      style="margin-top: -10px;">
+      <div style="display: flex; align-items: center;">
+        <i 
+          class="iconfont icon-biaoqian" 
+          style="margin-right: 2px; font-size: 1.15rem;">
+        </i>
+        
+          
+          <a 
+            href="/tags/python/" 
+            class="post-meta-link">
+            python
+          </a>
+        
+      </div>
+    </div>
+  
+  </header>
+  <div 
+    id="section" 
+    class="post-content">
+    <h2 id="常见模块解析"><a href="#常见模块解析" class="headerlink" title="常见模块解析"></a>常见模块解析</h2><h3 id="1-math库"><a href="#1-math库" class="headerlink" title="1. math库"></a>1. math库</h3><h4 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h4><table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">返回值 ( 描述 )</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">abs(x)</td>
+<td align="left">返回数字的绝对值，如abs(-10) 返回 10</td>
+</tr>
+<tr>
+<td align="left">ceil(x)</td>
+<td align="left">返回数字的上入整数，如math.ceil(4.1) 返回 5</td>
+</tr>
+<tr>
+<td align="left">cmp(x, y)</td>
+<td align="left">如果 x &lt; y 返回 -1, 如果 x &#x3D;&#x3D; y 返回 0, 如果 x &gt; y 返回 1。 **Python 3 已废弃，使用 (x&gt;y)-(x。</td>
+</tr>
+<tr>
+<td align="left">exp(x)</td>
+<td align="left">返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045</td>
+</tr>
+<tr>
+<td align="left">fabs(x)</td>
+<td align="left">返回数字的绝对值，如math.fabs(-10) 返回10.0</td>
+</tr>
+<tr>
+<td align="left">floor(x)</td>
+<td align="left">返回数字的下舍整数，如math.floor(4.9)返回 4</td>
+</tr>
+<tr>
+<td align="left">log(x)</td>
+<td align="left">如math.log(math.e)返回1.0,math.log(100,10)返回2.0</td>
+</tr>
+<tr>
+<td align="left">log10(x)</td>
+<td align="left">返回以10为基数的x的对数，如math.log10(100)返回 2.0</td>
+</tr>
+<tr>
+<td align="left">max(x1, x2,…)</td>
+<td align="left">返回给定参数的最大值，参数可以为序列。</td>
+</tr>
+<tr>
+<td align="left">min(x1, x2,…)</td>
+<td align="left">返回给定参数的最小值，参数可以为序列。</td>
+</tr>
+<tr>
+<td align="left">modf(x)</td>
+<td align="left">返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。</td>
+</tr>
+<tr>
+<td align="left">pow(x, y)</td>
+<td align="left">x**y 运算后的值。</td>
+</tr>
+<tr>
+<td align="left">round(x [,n])</td>
+<td align="left">返回浮点数 x 的四舍五入值，如给出 n 值，则代表舍入到小数点后的位数。<strong>其实准确的说是保留值将保留到离上一位更近的一端。</strong></td>
+</tr>
+<tr>
+<td align="left">sqrt(x)</td>
+<td align="left">返回数字x的平方根。</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h4><p>Python的math库包括以下三角函数：(比如：math.sin(math.pi&#x2F;2))</p>
+<table>
+<thead>
+<tr>
+<th align="left">函数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">acos(x)</td>
+<td align="left">返回x的反余弦弧度值。</td>
+</tr>
+<tr>
+<td align="left">asin(x)</td>
+<td align="left">返回x的反正弦弧度值。</td>
+</tr>
+<tr>
+<td align="left">atan(x)</td>
+<td align="left">返回x的反正切弧度值。</td>
+</tr>
+<tr>
+<td align="left">atan2(y, x)</td>
+<td align="left">返回给定的 X 及 Y 坐标值的反正切值。</td>
+</tr>
+<tr>
+<td align="left">cos(x)</td>
+<td align="left">返回x的弧度的余弦值。</td>
+</tr>
+<tr>
+<td align="left">hypot(x, y)</td>
+<td align="left">返回欧几里德范数 sqrt(x<em>x + y</em>y)。</td>
+</tr>
+<tr>
+<td align="left">sin(x)</td>
+<td align="left">返回的x弧度的正弦值。</td>
+</tr>
+<tr>
+<td align="left">tan(x)</td>
+<td align="left">返回x弧度的正切值。</td>
+</tr>
+<tr>
+<td align="left">degrees(x)</td>
+<td align="left">将弧度转换为角度,如degrees(math.pi&#x2F;2) ， 返回90.0</td>
+</tr>
+<tr>
+<td align="left">radians(x)</td>
+<td align="left">将角度转换为弧度</td>
+</tr>
+</tbody></table>
+<hr>
+<h4 id="数学常量"><a href="#数学常量" class="headerlink" title="数学常量"></a>数学常量</h4><table>
+<thead>
+<tr>
+<th align="left">常量</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">math.pi</td>
+<td align="left">数学常量 pi（圆周率，一般以π来表示）</td>
+</tr>
+<tr>
+<td align="left">math.e</td>
+<td align="left">数学常量 e，e即自然常数（自然常数）。</td>
+</tr>
+</tbody></table>
+<h3 id="2-random库"><a href="#2-random库" class="headerlink" title="2. random库"></a>2. random库</h3><p>Python的random库包含以下常用随机数函数：</p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
+<span class="token comment" spellcheck="true"># 生成一个 [0, 1) 范围内的随机小数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 生成一个 [1, 10] 范围内的随机整数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>randint<span class="token punctuation">(</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">10</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 生成一个 [0, 1] 范围内的随机小数</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>uniform<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 从序列中随机选择一个元素</span>
+seq <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'apple'</span><span class="token punctuation">,</span> <span class="token string">'banana'</span><span class="token punctuation">,</span> <span class="token string">'orange'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>choice<span class="token punctuation">(</span>seq<span class="token punctuation">)</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true"># 将序列中的元素随机打乱（shuffle洗牌）</span>
+seq <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span> <span class="token number">2</span><span class="token punctuation">,</span> <span class="token number">3</span><span class="token punctuation">,</span> <span class="token number">4</span><span class="token punctuation">,</span> <span class="token number">5</span><span class="token punctuation">]</span>
+random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>seq<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>seq<span class="token punctuation">)</span>
+</code></pre>
+<h3 id="3-re-模块"><a href="#3-re-模块" class="headerlink" title="3. re 模块"></a>3. re 模块</h3><h4 id="1-常用正则表达式"><a href="#1-常用正则表达式" class="headerlink" title="1. 常用正则表达式"></a>1. 常用正则表达式</h4><table>
+<thead>
+<tr>
+<th>模式</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>\w</td>
+<td>匹配字母数字及下划线</td>
+</tr>
+<tr>
+<td>\W</td>
+<td>匹配非字母数字下划线</td>
+</tr>
+<tr>
+<td>\s</td>
+<td>匹配任意空白字符，等价于[\t,\n,\r,\f]</td>
+</tr>
+<tr>
+<td>\S</td>
+<td>匹配任意非空字符</td>
+</tr>
+<tr>
+<td>\d</td>
+<td>匹配任意数字，等价于[0-9]</td>
+</tr>
+<tr>
+<td>\D</td>
+<td>匹配任意非数字</td>
+</tr>
+<tr>
+<td>\A</td>
+<td>匹配以xx字符串开始</td>
+</tr>
+<tr>
+<td>\Z</td>
+<td>匹配xx字符串结束，如果是存在换行，只匹配到换行前的结束字符串</td>
+</tr>
+<tr>
+<td>\z</td>
+<td>匹配xx字符串结束</td>
+</tr>
+<tr>
+<td>\G</td>
+<td>匹配最后匹配完成的位置</td>
+</tr>
+<tr>
+<td>\n</td>
+<td>匹配一个换行符</td>
+</tr>
+<tr>
+<td>\t</td>
+<td>匹配一个制表符</td>
+</tr>
+<tr>
+<td>^</td>
+<td>匹配字符串的开头</td>
+</tr>
+<tr>
+<td>$</td>
+<td>匹配字符串的末尾</td>
+</tr>
+<tr>
+<td><strong>.</strong></td>
+<td>匹配任意字符, 除了换行符, 当 re.DOTALL 标记被指定时, 则可以匹配包括换行符的任意字符</td>
+</tr>
+<tr>
+<td>[…]</td>
+<td>用来表示一组字符， 单独列出：[amk] 匹配 ‘a’，‘m’ 或 ‘k’</td>
+</tr>
+<tr>
+<td>[^…]</td>
+<td>不在 [ ] 中的字符：[^abc] 匹配除了a， b， c之外的字符</td>
+</tr>
+<tr>
+<td>*</td>
+<td>匹配0个或多个的表达式</td>
+</tr>
+<tr>
+<td>+</td>
+<td>匹配1个或多个的表达式</td>
+</tr>
+<tr>
+<td>?</td>
+<td>匹配0个或1个由前面的正则表达式定义的片段，非贪婪方式</td>
+</tr>
+<tr>
+<td>{n}</td>
+<td>精确匹配n个前面表达式。</td>
+</tr>
+<tr>
+<td>{n，m}</td>
+<td>匹配n到m次由前面的正则表达式定义的片段，贪婪方式</td>
+</tr>
+<tr>
+<td>alb</td>
+<td>匹配a或b</td>
+</tr>
+<tr>
+<td>()</td>
+<td>匹配括号内的表达式，也表示一个组</td>
+</tr>
+</tbody></table>
+<p><strong>注意</strong>：<code>[ ]</code>所有的特殊字符在字符集中都失去其原有的特殊含义,在字符集中如果要使用<code>]</code>、<code>-</code>或<code>^</code>，可以在前面加上<strong>反斜杠</strong>，或把<code>]</code>、<code>-</code>放在第一个字符，把<code>^</code>放在非第一个字符</p>
+<h4 id="2-常用函数"><a href="#2-常用函数" class="headerlink" title="2. 常用函数"></a>2. 常用函数</h4><table>
+<thead>
+<tr>
+<th>函数</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>re.match( )</td>
+<td>从字符串的起始位置匹配, 匹配成功, 返回一个匹配的对象, 否则返回None</td>
+</tr>
+<tr>
+<td>re.search( )</td>
+<td>扫描整个字符串并返回第一个成功的匹配</td>
+</tr>
+<tr>
+<td>re.findall( )</td>
+<td>在字符串中找到正则表达式所匹配的所有子串, 并返回一个列表, 如果没有找到匹配的, 则返回空列表</td>
+</tr>
+<tr>
+<td>re.split( )</td>
+<td>将一个字符串按照正则表达式匹配结果进行分割, 返回列表类型</td>
+</tr>
+<tr>
+<td>re.finditer( )</td>
+<td>在字符串中找到正则表达式所匹配的所有子串, 并把它们作为一个迭代器返回</td>
+</tr>
+<tr>
+<td>re.sub( )</td>
+<td>把字符串中所有匹配正则表达式的地方替换成新的字符串</td>
+</tr>
+<tr>
+<td>re.complie( )</td>
+<td>将正则表达式传入, 返回一个匹配对象, 一般与其他方法组合使用</td>
+</tr>
+</tbody></table>
+<h4 id="3-正则匹配使用示例"><a href="#3-正则匹配使用示例" class="headerlink" title="3. 正则匹配使用示例"></a>3. 正则匹配使用示例</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"llo"</span><span class="token punctuation">,</span><span class="token string">"ooo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># heooo</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># -1 (找不到返回 -1)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"he"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 0</span>
+
+<span class="token keyword">import</span> re
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\w"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a', 'b', '1', '2', '_']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\s"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _ "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [' ', ' ', ' ']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\Aab"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['ab']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\Aaa"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [] 没匹配到为空</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"_\Z"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># ['_']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"0\Z"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># [] 没匹配到为空</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\t"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ \t_"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># ['\t']</span>
+<span class="token comment" spellcheck="true">#"\s" 可以匹配"\t"和"\n"</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"^ab"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># ['ab']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"_$"</span><span class="token punctuation">,</span><span class="token string">"ab* 12$ _\n"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['_']</span>
+</code></pre>
+<p>重复匹配</p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#.匹配任意一个字符</span>
+<span class="token keyword">import</span> re
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.b"</span><span class="token punctuation">,</span><span class="token string">"a\tb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['a\tb']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.b"</span><span class="token punctuation">,</span><span class="token string">"a\nb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># [] (换行符匹配不到,匹配为空)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.b"</span><span class="token punctuation">,</span><span class="token string">"a b a*b abb a_b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['a b', 'a*b', 'abb', 'a_b']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.b"</span><span class="token punctuation">,</span><span class="token string">"a\nb"</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>S<span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># ['a\nb'] (加入参数, 包含换行)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.b"</span><span class="token punctuation">,</span><span class="token string">"a\nb"</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>DOTALL<span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># ['a\nb'] (同上效果一样)</span>
+
+<span class="token comment" spellcheck="true">#* 匹配前面那个字符0个或者n个</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a*"</span><span class="token punctuation">,</span><span class="token string">"aaaa aa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># ['aaaa', '', 'aa', ''] (零个或多个a)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab*"</span><span class="token punctuation">,</span><span class="token string">"abab aa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># ['ab', 'ab', 'a', 'a'] (一个a零个或多个b)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a*b"</span><span class="token punctuation">,</span><span class="token string">"ababaaaba aa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['ab', 'ab', 'aaab'] (零个或多个a一个b)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab*"</span><span class="token punctuation">,</span><span class="token string">"bbbbbbbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># [] (没有匹配到一个a零个或多个b)</span>
+
+<span class="token comment" spellcheck="true">#? 匹配前面那个字符0个或者1个</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab?"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># ['a']，匹配1个a，0个b</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab?"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['ab']</span>
+
+<span class="token comment" spellcheck="true">#&amp;#123;n,m&amp;#125; 匹配n~m个</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a&amp;#123;2&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"aaaa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     # <span class="token punctuation">[</span><span class="token string">'aa'</span><span class="token punctuation">,</span> <span class="token string">'aa'</span><span class="token punctuation">]</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;2,6&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>一个a<span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">~</span><span class="token number">6</span>个b<span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;1,&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>相当于 ab<span class="token operator">+</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;0,&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>相当于 ab<span class="token operator">*</span><span class="token punctuation">)</span>
+
+<span class="token comment" spellcheck="true">#[ ]逐个匹配</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a[*1_c-]b"</span><span class="token punctuation">,</span><span class="token string">"a*ba1b a_baaba-b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['a*b', 'a1b', 'a_b', 'a-b']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a[^a-zA-Z0-9]b"</span><span class="token punctuation">,</span><span class="token string">"a*banb aPbaa7b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a*b'] (非a~z,A~Z,0~9)</span>
+
+<span class="token comment" spellcheck="true">#( )分组</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'ab+'</span><span class="token punctuation">,</span><span class="token string">'ababab123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['ab', 'ab', 'ab']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'(ab)+123'</span><span class="token punctuation">,</span><span class="token string">'ababab123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['ab']，匹配到末尾的 ab123 中的 ab</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'(?:ab)+123'</span><span class="token punctuation">,</span><span class="token string">'ababab123'</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+<span class="token comment" spellcheck="true">#['ababab123']， findall的结果不是匹配的全部内容，而是组内的内容, ?: 可以让结果为匹配的全部内容,详见非捕获匹配</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'href="(.*?)"'</span><span class="token punctuation">,</span><span class="token string">'&lt;a href="http://www.baidu.com">点击&lt;/a>'</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true"># ['http://www.baidu.com']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">'href="(?:.*?)"'</span><span class="token punctuation">,</span><span class="token string">'&lt;a href="http://www.baidu.com">点击&lt;/a>&lt;a href="http://www.aiqiyi.com">点击2&lt;/a>'</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true"># ['href="http://www.baidu.com"', 'href="http://www.aiqiyi.com"']</span>
+
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a\.b"</span><span class="token punctuation">,</span><span class="token string">"a1b a.b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a.b']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"shawn|song"</span><span class="token punctuation">,</span><span class="token string">"shawn is man song is shawn"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['shawn', 'song', 'shawn']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"A(?:abc|cba)A"</span><span class="token punctuation">,</span><span class="token string">"AabcA"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['AabcA']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"com(?:puter|e)"</span><span class="token punctuation">,</span><span class="token string">"come on! Here is a computer "</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['come', 'computer']</span>
+
+<span class="token comment" spellcheck="true">#匹配所有数字</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\d+\.?\d*"</span><span class="token punctuation">,</span><span class="token string">"12as3.45qw2k7"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['12', '3.45', '2', '7']</span>
+</code></pre>
+<p><strong>贪婪匹配<code>.*</code>与懒惰匹配<code>.*?</code></strong></p>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.*b"</span><span class="token punctuation">,</span><span class="token string">"a11b22222b33"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a11b22222b']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.*?b"</span><span class="token punctuation">,</span><span class="token string">"a11b22222b3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a11b']</span>
+</code></pre>
+<h4 id="4-方法示例"><a href="#4-方法示例" class="headerlink" title="4. 方法示例"></a>4. 方法示例</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#re.findall(pattern,string)</span>
+    <span class="token comment" spellcheck="true">#在字符串中找到正则表达式所匹配的所有子串, 并返回一个列表, 如果没有找到匹配的, 则返回空列表</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"(ab)+(cd)+"</span><span class="token punctuation">,</span><span class="token string">"ababcdcd abcd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#[('ab', 'cd'), ('ab', 'cd')]，返回元组列表</span>
+
+<span class="token comment" spellcheck="true">#re.search()</span>
+    匹配整个字符串<span class="token punctuation">,</span> 只到找到第一个匹配然后返回一个包含匹配信息的对象<span class="token punctuation">(</span>re<span class="token punctuation">.</span>Match对象<span class="token punctuation">)</span>
+    该对象可以通过调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span>方法得到匹配的字符串<span class="token punctuation">,</span>如果字符串没有匹配，则返回None
+    如果没有匹配到值就调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法<span class="token punctuation">,</span> 抛出异常
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"112abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token comment" spellcheck="true"># &lt;re.Match object; span=(3, 6), match='abc'></span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"112abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># abc</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">,</span><span class="token string">"12abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment" spellcheck="true"># None</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">,</span><span class="token string">"12abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
+    <span class="token comment" spellcheck="true"># 报错 "AttributeError" 因为没拿到这个对象,所以没有group()属性</span>
+
+<span class="token comment" spellcheck="true">#re.match()</span>
+    与 re<span class="token punctuation">.</span>search 功能相同<span class="token punctuation">,</span> 但必须匹配起始位置<span class="token punctuation">,</span> 不然返回 None
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
+    <span class="token comment" spellcheck="true"># &lt;re.Match object; span=(0, 3), match='abc'></span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># abc</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"1abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># None</span>
+
+<span class="token comment" spellcheck="true">#re.split()</span>
+    以规定字符作为分隔符对字符串进行切分<span class="token punctuation">,</span> 切分结果放入列表<span class="token punctuation">,</span> 没匹配到返回原字符串列表
+    将规定字符放入 <span class="token punctuation">[</span> <span class="token punctuation">]</span> 则是逐个匹配
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">,</span><span class="token string">"abcoababcoabc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#['', 'co', '', 'co', 'c']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"nbc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['nbc']，返回原字符串</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"[ob]"</span><span class="token punctuation">,</span><span class="token string">"abcoabcoabc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a', 'c', 'a', 'c', 'a', 'c']</span>
+
+<span class="token comment" spellcheck="true">#re.sub()和re.subn()</span>
+    匹配字符<span class="token punctuation">,</span> 并将其该成指定字符<span class="token punctuation">,</span> 返回改变后的字符串<span class="token punctuation">,</span> 后面可跟个数参数<span class="token punctuation">,</span> 不指定默认替换所有
+    re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span> <span class="token punctuation">)</span> 返回一个元组<span class="token punctuation">,</span> 第二个元素返回的是替换的个数
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"AA"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># i AAm AA mAAn</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"AA"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># i AAm AA mAAn，不报错</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ('i Am A mAn', 3) (显示替换的个数)</span>
+
+<span class="token comment" spellcheck="true">#re.compile()  	返回一个对象</span>
+obj<span class="token operator">=</span>re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">"\d&amp;#123;2&amp;#125;"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># re.compile('\\d&amp;#123;2&amp;#125;')</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['12', '12']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment" spellcheck="true"># 12</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"123ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment" spellcheck="true"># 12</span>
+</code></pre>
+<p>substitude 替换</p>
+<h4 id="5-非捕获匹配"><a href="#5-非捕获匹配" class="headerlink" title="5. 非捕获匹配?: ?! ?&#x3D;"></a>5. 非捕获匹配?: ?! ?&#x3D;</h4><p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png" class="lozad post-image"src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png"></p>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ?:</span>
+    <span class="token punctuation">(</span>?<span class="token punctuation">:</span><span class="token punctuation">)</span>非捕获分组，只会进行单纯的模式匹配并不会将匹配到的值进行保存，与<span class="token punctuation">(</span><span class="token punctuation">)</span>区分
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"jk(loli)+"</span><span class="token punctuation">,</span><span class="token string">"jkloli"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['loli']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"jk(?:loli)+"</span><span class="token punctuation">,</span><span class="token string">"jkloli"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['jkloli']</span>
+
+<span class="token comment" spellcheck="true"># ?!	正向否定预查</span>
+    <span class="token number">1</span><span class="token punctuation">.</span>在没匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"(?![\d]+$)(?![a-zA-Z]+$)[\da-zA-Z]&amp;#123;6&amp;#125;$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#匹配6位数字与字母组合，不能纯数字或字母</span>
+    <span class="token number">2</span><span class="token punctuation">.</span>匹配位置 后面 不能跟着指定表达式。
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"19(?!99)"</span><span class="token punctuation">,</span><span class="token string">"1999"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\d&amp;#123;2&amp;#125;(?!99)"</span><span class="token punctuation">,</span><span class="token string">"1999 1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>#<span class="token punctuation">[</span><span class="token string">'99'</span><span class="token punctuation">,</span> <span class="token string">'19'</span><span class="token punctuation">,</span> <span class="token string">'88'</span><span class="token punctuation">]</span>
+    <span class="token comment" spellcheck="true">#先尝试匹配"1999"，再'999 '(成功)，再"9 19"，再" 198"，再"1988"(成功)，再"88",理解下匹配的窗格移动</span>
+    
+<span class="token comment" spellcheck="true"># ?=  正向肯定预查</span>
+    <span class="token number">1</span><span class="token punctuation">.</span>在匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"(?=.*[\d])(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[!@#%&amp;])^([\da-zA-Z!@#%&amp;]&amp;#123;7,&amp;#125;)$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true">#至少七位密码，包含大小写，数字，特殊字符(!,@,#,%,&amp;)</span>
+    
+    <span class="token number">2</span><span class="token punctuation">.</span>匹配位置 后面 必须跟着指定表达式。
+r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不能匹配foobaz中的foo
+    
+
+<span class="token comment" spellcheck="true"># ?&lt;=</span>
+    匹配位置 前面 必须跟着指定表达式。
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"(?&lt;=jk).*?(?=li)"</span><span class="token punctuation">,</span><span class="token string">"mcjli jkloli liejk"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#['lo']</span>
+
+<span class="token comment" spellcheck="true"># ?&lt;!</span>
+    匹配位置 前面 不能跟着指定表达式。
+    <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\B(?&lt;!18)\d&amp;#123;2&amp;#125;\\b"</span><span class="token punctuation">,</span><span class="token string">"1988  1899"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #<span class="token punctuation">[</span><span class="token string">'88'</span><span class="token punctuation">]</span>
+    
+</code></pre>
+<h4 id="6-边界匹配问题"><a href="#6-边界匹配问题" class="headerlink" title="6. 边界匹配问题"></a>6. 边界匹配问题</h4><p>\b表示单词边界，\B表示非单词边界</p>
+<blockquote>
+<p>一般空格、换行、标点符号或者特殊符号来表示边界</p>
+</blockquote>
+<blockquote>
+<p>或者说非数字、字母、下滑线、unicode汉字表示边界</p>
+</blockquote>
+<blockquote>
+<p>中文字符串为边界的话要用re.A编码模式</p>
+</blockquote>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]&amp;#123;2&amp;#125;)\\b"</span><span class="token punctuation">,</span><span class="token string">"1999  1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #<span class="token punctuation">[</span><span class="token string">'1988'</span><span class="token punctuation">]</span>
+
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]&amp;#123;2&amp;#125;)\\b"</span><span class="token punctuation">,</span><span class="token string">"你也玩1999?1988带我一个"</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>A<span class="token punctuation">)</span><span class="token punctuation">)</span>
+    <span class="token comment" spellcheck="true"># ['1988']</span>
+</code></pre>
+<h3 id="4-request模块"><a href="#4-request模块" class="headerlink" title="4. request模块"></a>4. request模块</h3><p>吐槽：b站王道的计算机网络好水。</p>
+<h3 id="5-time库"><a href="#5-time库" class="headerlink" title="5. time库"></a>5. time库</h3>
+  </div>
+  <div>
+    
+      <div 
+        class="post-note note-warning copyright" 
+        style="margin-top: 42px">
+        <p>
+          <span style="font-weight: bold;">作者：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="/about">
+            jkloli
+          </a>
+        </p>
+        <p>
+          <span style="font-weight: bold;">文章链接：</span><a 
+            target="_blank" 
+            rel="nofollow noopener noreferrer" 
+            href="https://eyjafjalla6.github.io/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/">
+            https://eyjafjalla6.github.io/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/
+          </a>
+        </p>
+        <p><span style="font-weight: bold;">版权声明：</span>本博客所有文章除特别声明外，均采用<a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">CC BY-NC-SA 4.0 协议</a>。转载请注明出处！</p>
+      </div>
+    
+  </div>
+</article>
+<div class="nav">
+  
+    <div class="nav-item-prev">
+      <a 
+        href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" 
+        class="nav-link">
+        <i class="iconfont icon-left nav-prev-icon"></i>
+        <div>
+          <div class="nav-label">Prev</div>
+          
+            <div class="nav-title">C语言基础 </div>
+          
+        </div>
+      </a>
+    </div>
+  
+  
+    <div class="nav-item-next">
+      <a 
+        href="/2023/08/24/%E6%B5%8B%E8%AF%95/" 
+        class="nav-link">
+        <div>
+          <div class="nav-label">Next</div>
+          
+            <div class="nav-title">测试 </div>
+          
+        </div>
+        <i class="iconfont icon-right nav-next-icon"></i>
+      </a>
+    </div>
+  
+</div>
+
+<div 
+  class="card card-content toc-card" 
+  id="mobiletoc">
+  <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>TOC
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+</div>
+            </main>
+            <aside class="right-column">
+              <div class="sticky-widescreen">
+  
+  
+    <article class="card card-content toc-card">
+      <div class="toc-header">
+  <i 
+    class="iconfont icon-menu" 
+    style="padding-right: 2px;">
+  </i>TOC
+</div>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+    </article>
+  
+  
+  <article class="card card-content">
+    <div class="recent-posts-card">
+  <div class="recent-posts-header">
+    <i 
+      class="iconfont icon-wenzhang_huaban" 
+      style="padding-right: 2px;">
+    </i>Recent Posts
+  </div>
+  <div class="recent-posts-list">
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-10-05</div>
+        <a href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"><div class="recent-posts-item-content">C语言基础</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-08-24</div>
+        <a href="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/"><div class="recent-posts-item-content">python常用库</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-08-24</div>
+        <a href="/2023/08/24/%E6%B5%8B%E8%AF%95/"><div class="recent-posts-item-content">测试</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-08-24</div>
+        <a href="/2023/08/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86mysql%E7%89%88/"><div class="recent-posts-item-content">数据库原理mysql版</div></a>
+      </div>
+    
+  </div>
+</div>
+  </article>
+  
+  
+</div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </div>
+     
+    <footer class="footer">
+  <div class="footer-container">
+    <div>
+      <div class="footer-dsc">
+        <span>
+          Copyright ©
+          
+            2020
+          
+          
+                - 
+                2023
+          
+        </span>
+        &nbsp;
+        <a 
+          href="/" 
+          class="footer-link">
+          jkloli's blog
+        </a>
+      </div>
+    </div>
+
+    
+      <div class="footer-dsc">
+        
+          Powered by
+          <a 
+            href="https://hexo.io/" 
+            class="footer-link" 
+            target="_blank" 
+            rel="nofollow noopener noreferrer">
+            &nbsp;Hexo
+          </a>
+        
+        
+          <span>&nbsp;|&nbsp;</span>
+        
+        
+          Theme -
+          <a 
+            href="https://github.com/theme-kaze" 
+            class="footer-link" 
+            target="_blank"
+            rel="nofollow noopener noreferrer">
+            &nbsp;Kaze
+          </a>
+        
+      </div>
+    
+    
+    
+    
+</footer>
+ 
+    
+  <a 
+    role="button" 
+    id="scrollbutton" 
+    class="basebutton" 
+    aria-label="回到顶部">
+    <i class="iconfont icon-arrowleft button-icon"></i>
+  </a>
+
+<a 
+  role="button" 
+  id="menubutton"
+  aria-label="menu button"
+  class="basebutton">
+  <i class="iconfont icon-menu button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="popbutton" 
+  class="basebutton" 
+  aria-label="控制中心">
+  <i class="iconfont icon-expand button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="darkbutton" 
+  class="basebutton darkwidget" 
+  aria-label="夜色模式">
+  <i class="iconfont icon-weather button-icon"></i>
+</a>
+<a 
+  role="button" 
+  id="searchbutton" 
+  class="basebutton searchwidget" 
+  aria-label="搜索">
+  <i class="iconfont icon-search button-icon"></i>
+</a> 
+     
+     
+     
+      <script>
+  var addImgLayout = function () {
+    var img = document.querySelectorAll('.post-content img')
+    var i
+    for (i = 0; i < img.length; i++) {
+      var wrapper = document.createElement('a')
+      wrapper.setAttribute('href', img[i].getAttribute('data-src'))
+      wrapper.setAttribute('aria-label', 'illustration')
+      wrapper.style.cssText =
+        'width: 100%; display: flex; justify-content: center;'
+      if (img[i].alt) wrapper.dataset.caption = img[i].alt
+      wrapper.dataset.nolink = true
+      img[i].before(wrapper)
+      wrapper.append(img[i])
+      var divWrap = document.createElement('div')
+      divWrap.classList.add('gallery')
+      wrapper.before(divWrap)
+      divWrap.append(wrapper)
+    }
+    baguetteBox.run('.gallery')
+  }
+</script>
+<script>
+  loadScript(
+    "/js/lib/lightbox/baguetteBox.min.js",
+    addImgLayout
+  )
+</script>
+ 
+     
+     
+    <script src="/js/main.js"></script> 
+     
+    
+      <script>
+        var addLazyload = function () {
+          var observer = lozad('.lozad', {
+            load: function (el) {
+              el.srcset = el.getAttribute('data-src')
+            },
+            loaded: function (el) {
+              el.classList.add('loaded')
+            },
+          })
+          observer.observe()
+        }
+      </script>
+      <script>
+        loadScript('/js/lib/lozad.min.js', addLazyload)
+      </script>
+    
+    <script src="//instant.page/5.1.0" type="module"
+      integrity="sha384-by67kQnR+pyfy8yWP4kPO12fHKRLHZPfEsiSXR8u2IKcTdxD805MGUXBzVPnkLHw"></script>
+    
+    
+      <script>
+        setTimeout(() => {localSearch("search.json")}, 0)
+      </script>
+    
+  </body>
+</html>
