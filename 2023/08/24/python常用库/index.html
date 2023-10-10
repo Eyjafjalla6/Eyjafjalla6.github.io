@@ -165,13 +165,12 @@
   
   
   
+    
+    <link rel="prefetch" href="//cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" as="script">
   
   
-<!-- hexo injector head_end start -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
-
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
-<!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+  
+<meta name="generator" content="Hexo 6.3.0"><link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
 
   <body>
     <div class="wrapper">
@@ -196,7 +195,7 @@
         href="/" 
         class="navbar-menu-item">
         
-          Home
+          首页
         
       </a>
     
@@ -204,7 +203,7 @@
         href="/archives" 
         class="navbar-menu-item">
         
-          Archive
+          归档
         
       </a>
     
@@ -212,7 +211,7 @@
         href="/tags" 
         class="navbar-menu-item">
         
-          Tags
+          标签
         
       </a>
     
@@ -220,7 +219,7 @@
         href="/categories" 
         class="navbar-menu-item">
         
-          Categories
+          分类
         
       </a>
     
@@ -228,7 +227,7 @@
         href="/about" 
         class="navbar-menu-item">
         
-          About
+          关于
         
       </a>
     
@@ -236,7 +235,7 @@
         href="/links" 
         class="navbar-menu-item">
         
-          Friends
+          友链
         
       </a>
     
@@ -297,20 +296,20 @@
   <a 
     class="author-posts-count" 
     href="/archives">
-    <span>7</span>
-    <span>Posts</span>
+    <span>8</span>
+    <span>文章</span>
   </a>
   <a 
     class="author-categories-count" 
     href="/categories">
     <span>5</span>
-    <span>Categories</span>
+    <span>分类</span>
   </a>
   <a 
     class="author-tags-count" 
     href="/tags">
     <span>1</span>
-    <span>Tags</span>
+    <span>标签</span>
   </a>
 </div>
 
@@ -324,9 +323,9 @@
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text"> 常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text"> 1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text"> 数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text"> 三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text"> 数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text"> 2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text"> 3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text"> 1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text"> 2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text"> 5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text"> 6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text"> 4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text"> 5. time库</span></a></li></ol></li></ol>
       </div>
     </article>
   
@@ -337,20 +336,13 @@
     <i 
       class="iconfont icon-fenlei" 
       style="padding-right: 2px;">
-    </i>Categories
+    </i>分类
   </div>
   <div class="categories-list">
     
       <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/">
         <div class="categories-list-item">
           计算机基础
-          <span class="categories-list-item-badge">1</span>
-        </div>
-      </a>
-    
-      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
-        <div class="categories-list-item">
-          计算机语言基础
           <span class="categories-list-item-badge">1</span>
         </div>
       </a>
@@ -362,10 +354,17 @@
         </div>
       </a>
     
+      <a href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/">
+        <div class="categories-list-item">
+          计算机语言基础
+          <span class="categories-list-item-badge">1</span>
+        </div>
+      </a>
+    
       <a href="/categories/%E5%A4%A7%E4%B8%80/">
         <div class="categories-list-item">
           大一
-          <span class="categories-list-item-badge">1</span>
+          <span class="categories-list-item-badge">2</span>
         </div>
       </a>
     
@@ -386,7 +385,7 @@
     <i 
       class="iconfont icon-biaoqian" 
       style="padding-right: 2px;">
-    </i>hot tags
+    </i>热门标签
   </div>
   <div class="tags-list">
     
@@ -431,7 +430,7 @@
     
     
       <span class="dot"></span>
-      <span>3k words</span>
+      <span>2.9k 字</span>
     
   </div>
   
@@ -458,138 +457,150 @@
   <div 
     id="section" 
     class="post-content">
-    <h2 id="常见模块解析"><a href="#常见模块解析" class="headerlink" title="常见模块解析"></a>常见模块解析</h2><h3 id="1-math库"><a href="#1-math库" class="headerlink" title="1. math库"></a>1. math库</h3><h4 id="数学函数"><a href="#数学函数" class="headerlink" title="数学函数"></a>数学函数</h4><table>
-<thead>
-<tr>
-<th align="left">函数</th>
-<th align="left">返回值 ( 描述 )</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">abs(x)</td>
-<td align="left">返回数字的绝对值，如abs(-10) 返回 10</td>
-</tr>
-<tr>
-<td align="left">ceil(x)</td>
-<td align="left">返回数字的上入整数，如math.ceil(4.1) 返回 5</td>
-</tr>
-<tr>
-<td align="left">cmp(x, y)</td>
-<td align="left">如果 x &lt; y 返回 -1, 如果 x &#x3D;&#x3D; y 返回 0, 如果 x &gt; y 返回 1。 **Python 3 已废弃，使用 (x&gt;y)-(x。</td>
-</tr>
-<tr>
-<td align="left">exp(x)</td>
-<td align="left">返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045</td>
-</tr>
-<tr>
-<td align="left">fabs(x)</td>
-<td align="left">返回数字的绝对值，如math.fabs(-10) 返回10.0</td>
-</tr>
-<tr>
-<td align="left">floor(x)</td>
-<td align="left">返回数字的下舍整数，如math.floor(4.9)返回 4</td>
-</tr>
-<tr>
-<td align="left">log(x)</td>
-<td align="left">如math.log(math.e)返回1.0,math.log(100,10)返回2.0</td>
-</tr>
-<tr>
-<td align="left">log10(x)</td>
-<td align="left">返回以10为基数的x的对数，如math.log10(100)返回 2.0</td>
-</tr>
-<tr>
-<td align="left">max(x1, x2,…)</td>
-<td align="left">返回给定参数的最大值，参数可以为序列。</td>
-</tr>
-<tr>
-<td align="left">min(x1, x2,…)</td>
-<td align="left">返回给定参数的最小值，参数可以为序列。</td>
-</tr>
-<tr>
-<td align="left">modf(x)</td>
-<td align="left">返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。</td>
-</tr>
-<tr>
-<td align="left">pow(x, y)</td>
-<td align="left">x**y 运算后的值。</td>
-</tr>
-<tr>
-<td align="left">round(x [,n])</td>
-<td align="left">返回浮点数 x 的四舍五入值，如给出 n 值，则代表舍入到小数点后的位数。<strong>其实准确的说是保留值将保留到离上一位更近的一端。</strong></td>
-</tr>
-<tr>
-<td align="left">sqrt(x)</td>
-<td align="left">返回数字x的平方根。</td>
-</tr>
-</tbody></table>
-<hr>
-<h4 id="三角函数"><a href="#三角函数" class="headerlink" title="三角函数"></a>三角函数</h4><p>Python的math库包括以下三角函数：(比如：math.sin(math.pi&#x2F;2))</p>
+    <h2 id="常见模块解析"><a class="markdownIt-Anchor" href="#常见模块解析"></a> 常见模块解析</h2>
+<h3 id="1-math库"><a class="markdownIt-Anchor" href="#1-math库"></a> 1. math库</h3>
+<h4 id="数学函数"><a class="markdownIt-Anchor" href="#数学函数"></a> 数学函数</h4>
 <table>
 <thead>
 <tr>
-<th align="left">函数</th>
-<th align="left">描述</th>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">返回值 ( 描述 )</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">acos(x)</td>
-<td align="left">返回x的反余弦弧度值。</td>
+<tbody>
+<tr>
+<td style="text-align:left">abs(x)</td>
+<td style="text-align:left">返回数字的绝对值，如abs(-10) 返回 10</td>
 </tr>
 <tr>
-<td align="left">asin(x)</td>
-<td align="left">返回x的反正弦弧度值。</td>
+<td style="text-align:left">ceil(x)</td>
+<td style="text-align:left">返回数字的上入整数，如math.ceil(4.1) 返回 5</td>
 </tr>
 <tr>
-<td align="left">atan(x)</td>
-<td align="left">返回x的反正切弧度值。</td>
+<td style="text-align:left">cmp(x, y)</td>
+<td style="text-align:left">如果 x &lt; y 返回 -1, 如果 x == y 返回 0, 如果 x &gt; y 返回 1。 **Python 3 已废弃，使用 (x&gt;y)-(x。</td>
 </tr>
 <tr>
-<td align="left">atan2(y, x)</td>
-<td align="left">返回给定的 X 及 Y 坐标值的反正切值。</td>
+<td style="text-align:left">exp(x)</td>
+<td style="text-align:left">返回e的x次幂(ex),如math.exp(1) 返回2.718281828459045</td>
 </tr>
 <tr>
-<td align="left">cos(x)</td>
-<td align="left">返回x的弧度的余弦值。</td>
+<td style="text-align:left">fabs(x)</td>
+<td style="text-align:left">返回数字的绝对值，如math.fabs(-10) 返回10.0</td>
 </tr>
 <tr>
-<td align="left">hypot(x, y)</td>
-<td align="left">返回欧几里德范数 sqrt(x<em>x + y</em>y)。</td>
+<td style="text-align:left">floor(x)</td>
+<td style="text-align:left">返回数字的下舍整数，如math.floor(4.9)返回 4</td>
 </tr>
 <tr>
-<td align="left">sin(x)</td>
-<td align="left">返回的x弧度的正弦值。</td>
+<td style="text-align:left">log(x)</td>
+<td style="text-align:left">如math.log(math.e)返回1.0,math.log(100,10)返回2.0</td>
 </tr>
 <tr>
-<td align="left">tan(x)</td>
-<td align="left">返回x弧度的正切值。</td>
+<td style="text-align:left">log10(x)</td>
+<td style="text-align:left">返回以10为基数的x的对数，如math.log10(100)返回 2.0</td>
 </tr>
 <tr>
-<td align="left">degrees(x)</td>
-<td align="left">将弧度转换为角度,如degrees(math.pi&#x2F;2) ， 返回90.0</td>
+<td style="text-align:left">max(x1, x2,…)</td>
+<td style="text-align:left">返回给定参数的最大值，参数可以为序列。</td>
 </tr>
 <tr>
-<td align="left">radians(x)</td>
-<td align="left">将角度转换为弧度</td>
+<td style="text-align:left">min(x1, x2,…)</td>
+<td style="text-align:left">返回给定参数的最小值，参数可以为序列。</td>
 </tr>
-</tbody></table>
+<tr>
+<td style="text-align:left">modf(x)</td>
+<td style="text-align:left">返回x的整数部分与小数部分，两部分的数值符号与x相同，整数部分以浮点型表示。</td>
+</tr>
+<tr>
+<td style="text-align:left">pow(x, y)</td>
+<td style="text-align:left">x**y 运算后的值。</td>
+</tr>
+<tr>
+<td style="text-align:left">round(x [,n])</td>
+<td style="text-align:left">返回浮点数 x 的四舍五入值，如给出 n 值，则代表舍入到小数点后的位数。<strong>其实准确的说是保留值将保留到离上一位更近的一端。</strong></td>
+</tr>
+<tr>
+<td style="text-align:left">sqrt(x)</td>
+<td style="text-align:left">返回数字x的平方根。</td>
+</tr>
+</tbody>
+</table>
 <hr>
-<h4 id="数学常量"><a href="#数学常量" class="headerlink" title="数学常量"></a>数学常量</h4><table>
+<h4 id="三角函数"><a class="markdownIt-Anchor" href="#三角函数"></a> 三角函数</h4>
+<p>Python的math库包括以下三角函数：(比如：math.sin(math.pi/2))</p>
+<table>
 <thead>
 <tr>
-<th align="left">常量</th>
-<th align="left">描述</th>
+<th style="text-align:left">函数</th>
+<th style="text-align:left">描述</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">math.pi</td>
-<td align="left">数学常量 pi（圆周率，一般以π来表示）</td>
+<tbody>
+<tr>
+<td style="text-align:left">acos(x)</td>
+<td style="text-align:left">返回x的反余弦弧度值。</td>
 </tr>
 <tr>
-<td align="left">math.e</td>
-<td align="left">数学常量 e，e即自然常数（自然常数）。</td>
+<td style="text-align:left">asin(x)</td>
+<td style="text-align:left">返回x的反正弦弧度值。</td>
 </tr>
-</tbody></table>
-<h3 id="2-random库"><a href="#2-random库" class="headerlink" title="2. random库"></a>2. random库</h3><p>Python的random库包含以下常用随机数函数：</p>
+<tr>
+<td style="text-align:left">atan(x)</td>
+<td style="text-align:left">返回x的反正切弧度值。</td>
+</tr>
+<tr>
+<td style="text-align:left">atan2(y, x)</td>
+<td style="text-align:left">返回给定的 X 及 Y 坐标值的反正切值。</td>
+</tr>
+<tr>
+<td style="text-align:left">cos(x)</td>
+<td style="text-align:left">返回x的弧度的余弦值。</td>
+</tr>
+<tr>
+<td style="text-align:left">hypot(x, y)</td>
+<td style="text-align:left">返回欧几里德范数 sqrt(x<em>x + y</em>y)。</td>
+</tr>
+<tr>
+<td style="text-align:left">sin(x)</td>
+<td style="text-align:left">返回的x弧度的正弦值。</td>
+</tr>
+<tr>
+<td style="text-align:left">tan(x)</td>
+<td style="text-align:left">返回x弧度的正切值。</td>
+</tr>
+<tr>
+<td style="text-align:left">degrees(x)</td>
+<td style="text-align:left">将弧度转换为角度,如degrees(math.pi/2) ， 返回90.0</td>
+</tr>
+<tr>
+<td style="text-align:left">radians(x)</td>
+<td style="text-align:left">将角度转换为弧度</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h4 id="数学常量"><a class="markdownIt-Anchor" href="#数学常量"></a> 数学常量</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">常量</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">math.pi</td>
+<td style="text-align:left">数学常量 pi（圆周率，一般以π来表示）</td>
+</tr>
+<tr>
+<td style="text-align:left">math.e</td>
+<td style="text-align:left">数学常量 e，e即自然常数（自然常数）。</td>
+</tr>
+</tbody>
+</table>
+<h3 id="2-random库"><a class="markdownIt-Anchor" href="#2-random库"></a> 2. random库</h3>
+<p>Python的random库包含以下常用随机数函数：</p>
 <pre class=" language-python"><code class="language-python"><span class="token keyword">import</span> random
 <span class="token comment" spellcheck="true"># 生成一个 [0, 1) 范围内的随机小数</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>random<span class="token punctuation">.</span>random<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
@@ -609,14 +620,17 @@ seq <span class="token operator">=</span> <span class="token punctuation">[</spa
 random<span class="token punctuation">.</span>shuffle<span class="token punctuation">(</span>seq<span class="token punctuation">)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>seq<span class="token punctuation">)</span>
 </code></pre>
-<h3 id="3-re-模块"><a href="#3-re-模块" class="headerlink" title="3. re 模块"></a>3. re 模块</h3><h4 id="1-常用正则表达式"><a href="#1-常用正则表达式" class="headerlink" title="1. 常用正则表达式"></a>1. 常用正则表达式</h4><table>
+<h3 id="3-re-模块"><a class="markdownIt-Anchor" href="#3-re-模块"></a> 3. re 模块</h3>
+<h4 id="1-常用正则表达式"><a class="markdownIt-Anchor" href="#1-常用正则表达式"></a> 1. 常用正则表达式</h4>
+<table>
 <thead>
 <tr>
 <th>模式</th>
 <th>描述</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>\w</td>
 <td>匹配字母数字及下划线</td>
 </tr>
@@ -712,16 +726,19 @@ random<span class="token punctuation">.</span>shuffle<span class="token punctuat
 <td>()</td>
 <td>匹配括号内的表达式，也表示一个组</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <p><strong>注意</strong>：<code>[ ]</code>所有的特殊字符在字符集中都失去其原有的特殊含义,在字符集中如果要使用<code>]</code>、<code>-</code>或<code>^</code>，可以在前面加上<strong>反斜杠</strong>，或把<code>]</code>、<code>-</code>放在第一个字符，把<code>^</code>放在非第一个字符</p>
-<h4 id="2-常用函数"><a href="#2-常用函数" class="headerlink" title="2. 常用函数"></a>2. 常用函数</h4><table>
+<h4 id="2-常用函数"><a class="markdownIt-Anchor" href="#2-常用函数"></a> 2. 常用函数</h4>
+<table>
 <thead>
 <tr>
 <th>函数</th>
 <th>说明</th>
 </tr>
 </thead>
-<tbody><tr>
+<tbody>
+<tr>
 <td>re.match( )</td>
 <td>从字符串的起始位置匹配, 匹配成功, 返回一个匹配的对象, 否则返回None</td>
 </tr>
@@ -749,8 +766,10 @@ random<span class="token punctuation">.</span>shuffle<span class="token punctuat
 <td>re.complie( )</td>
 <td>将正则表达式传入, 返回一个匹配对象, 一般与其他方法组合使用</td>
 </tr>
-</tbody></table>
-<h4 id="3-正则匹配使用示例"><a href="#3-正则匹配使用示例" class="headerlink" title="3. 正则匹配使用示例"></a>3. 正则匹配使用示例</h4><pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"llo"</span><span class="token punctuation">,</span><span class="token string">"ooo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># heooo</span>
+</tbody>
+</table>
+<h4 id="3-正则匹配使用示例"><a class="markdownIt-Anchor" href="#3-正则匹配使用示例"></a> 3. 正则匹配使用示例</h4>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>replace<span class="token punctuation">(</span><span class="token string">"llo"</span><span class="token punctuation">,</span><span class="token string">"ooo"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># heooo</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># -1 (找不到返回 -1)</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span><span class="token string">"hello"</span><span class="token punctuation">.</span>find<span class="token punctuation">(</span><span class="token string">"he"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>    <span class="token comment" spellcheck="true"># 0</span>
 
@@ -785,11 +804,11 @@ random<span class="token punctuation">.</span>shuffle<span class="token punctuat
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab?"</span><span class="token punctuation">,</span><span class="token string">"a"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># ['a']，匹配1个a，0个b</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab?"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['ab']</span>
 
-<span class="token comment" spellcheck="true">#&amp;#123;n,m&amp;#125; 匹配n~m个</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a&amp;#123;2&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"aaaa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     # <span class="token punctuation">[</span><span class="token string">'aa'</span><span class="token punctuation">,</span> <span class="token string">'aa'</span><span class="token punctuation">]</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;2,6&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>一个a<span class="token punctuation">,</span><span class="token number">2</span><span class="token operator">~</span><span class="token number">6</span>个b<span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;1,&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>相当于 ab<span class="token operator">+</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab&amp;#123;0,&amp;#125;"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   # <span class="token punctuation">[</span><span class="token string">'abbb'</span><span class="token punctuation">]</span> <span class="token punctuation">(</span>相当于 ab<span class="token operator">*</span><span class="token punctuation">)</span>
+<span class="token comment" spellcheck="true">#{n,m} 匹配n~m个</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a{2}"</span><span class="token punctuation">,</span><span class="token string">"aaaa"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>     <span class="token comment" spellcheck="true"># ['aa', 'aa']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab{2,6}"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['abbb'] (一个a,2~6个b)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab{1,}"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># ['abbb'] (相当于 ab+)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab{0,}"</span><span class="token punctuation">,</span><span class="token string">"abbb"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true"># ['abbb'] (相当于 ab*)</span>
 
 <span class="token comment" spellcheck="true">#[ ]逐个匹配</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a[*1_c-]b"</span><span class="token punctuation">,</span><span class="token string">"a*ba1b a_baaba-b"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['a*b', 'a1b', 'a_b', 'a-b']</span>
@@ -817,86 +836,89 @@ random<span class="token punctuation">.</span>shuffle<span class="token punctuat
 <pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.*b"</span><span class="token punctuation">,</span><span class="token string">"a11b22222b33"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a11b22222b']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"a.*?b"</span><span class="token punctuation">,</span><span class="token string">"a11b22222b3"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a11b']</span>
 </code></pre>
-<h4 id="4-方法示例"><a href="#4-方法示例" class="headerlink" title="4. 方法示例"></a>4. 方法示例</h4><pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#re.findall(pattern,string)</span>
-    <span class="token comment" spellcheck="true">#在字符串中找到正则表达式所匹配的所有子串, 并返回一个列表, 如果没有找到匹配的, 则返回空列表</span>
+<h4 id="4-方法示例"><a class="markdownIt-Anchor" href="#4-方法示例"></a> 4. 方法示例</h4>
+<pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true">#re.findall(pattern,string)</span>
+	<span class="token comment" spellcheck="true">#在字符串中找到正则表达式所匹配的所有子串, 并返回一个列表, 如果没有找到匹配的, 则返回空列表</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"(ab)+(cd)+"</span><span class="token punctuation">,</span><span class="token string">"ababcdcd abcd"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">#[('ab', 'cd'), ('ab', 'cd')]，返回元组列表</span>
+	<span class="token comment" spellcheck="true">#[('ab', 'cd'), ('ab', 'cd')]，返回元组列表</span>
 
 <span class="token comment" spellcheck="true">#re.search()</span>
-    匹配整个字符串<span class="token punctuation">,</span> 只到找到第一个匹配然后返回一个包含匹配信息的对象<span class="token punctuation">(</span>re<span class="token punctuation">.</span>Match对象<span class="token punctuation">)</span>
-    该对象可以通过调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span>方法得到匹配的字符串<span class="token punctuation">,</span>如果字符串没有匹配，则返回None
-    如果没有匹配到值就调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法<span class="token punctuation">,</span> 抛出异常
+	匹配整个字符串<span class="token punctuation">,</span> 只到找到第一个匹配然后返回一个包含匹配信息的对象<span class="token punctuation">(</span>re<span class="token punctuation">.</span>Match对象<span class="token punctuation">)</span>
+	该对象可以通过调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span>方法得到匹配的字符串<span class="token punctuation">,</span>如果字符串没有匹配，则返回None
+	如果没有匹配到值就调用 group<span class="token punctuation">(</span><span class="token punctuation">)</span> 方法<span class="token punctuation">,</span> 抛出异常
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"112abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
-    <span class="token comment" spellcheck="true"># &lt;re.Match object; span=(3, 6), match='abc'></span>
+	<span class="token comment" spellcheck="true"># &lt;re.Match object; span=(3, 6), match='abc'></span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"112abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># abc</span>
 
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">,</span><span class="token string">"12abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>          <span class="token comment" spellcheck="true"># None</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"abcd"</span><span class="token punctuation">,</span><span class="token string">"12abc333abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span> 
-    <span class="token comment" spellcheck="true"># 报错 "AttributeError" 因为没拿到这个对象,所以没有group()属性</span>
+	<span class="token comment" spellcheck="true"># 报错 "AttributeError" 因为没拿到这个对象,所以没有group()属性</span>
 
 <span class="token comment" spellcheck="true">#re.match()</span>
-    与 re<span class="token punctuation">.</span>search 功能相同<span class="token punctuation">,</span> 但必须匹配起始位置<span class="token punctuation">,</span> 不然返回 None
+	与 re<span class="token punctuation">.</span>search 功能相同<span class="token punctuation">,</span> 但必须匹配起始位置<span class="token punctuation">,</span> 不然返回 None
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  
-    <span class="token comment" spellcheck="true"># &lt;re.Match object; span=(0, 3), match='abc'></span>
+	<span class="token comment" spellcheck="true"># &lt;re.Match object; span=(0, 3), match='abc'></span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># abc</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"abc"</span><span class="token punctuation">,</span><span class="token string">"1abc22abc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># None</span>
 
 <span class="token comment" spellcheck="true">#re.split()</span>
-    以规定字符作为分隔符对字符串进行切分<span class="token punctuation">,</span> 切分结果放入列表<span class="token punctuation">,</span> 没匹配到返回原字符串列表
+	以规定字符作为分隔符对字符串进行切分<span class="token punctuation">,</span> 切分结果放入列表<span class="token punctuation">,</span> 没匹配到返回原字符串列表
     将规定字符放入 <span class="token punctuation">[</span> <span class="token punctuation">]</span> 则是逐个匹配
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"ab"</span><span class="token punctuation">,</span><span class="token string">"abcoababcoabc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true">#['', 'co', '', 'co', 'c']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"nbc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['nbc']，返回原字符串</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>split<span class="token punctuation">(</span><span class="token string">"[ob]"</span><span class="token punctuation">,</span><span class="token string">"abcoabcoabc"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ['a', 'c', 'a', 'c', 'a', 'c']</span>
 
 <span class="token comment" spellcheck="true">#re.sub()和re.subn()</span>
-    匹配字符<span class="token punctuation">,</span> 并将其该成指定字符<span class="token punctuation">,</span> 返回改变后的字符串<span class="token punctuation">,</span> 后面可跟个数参数<span class="token punctuation">,</span> 不指定默认替换所有
-    re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span> <span class="token punctuation">)</span> 返回一个元组<span class="token punctuation">,</span> 第二个元素返回的是替换的个数
+	匹配字符<span class="token punctuation">,</span> 并将其该成指定字符<span class="token punctuation">,</span> 返回改变后的字符串<span class="token punctuation">,</span> 后面可跟个数参数<span class="token punctuation">,</span> 不指定默认替换所有
+	re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span> <span class="token punctuation">)</span> 返回一个元组<span class="token punctuation">,</span> 第二个元素返回的是替换的个数
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"AA"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># i AAm AA mAAn</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>sub<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"AA"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">,</span><span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># i AAm AA mAAn，不报错</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>subn<span class="token punctuation">(</span><span class="token string">"a"</span><span class="token punctuation">,</span><span class="token string">"A"</span><span class="token punctuation">,</span><span class="token string">"i am a man"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>  <span class="token comment" spellcheck="true"># ('i Am A mAn', 3) (显示替换的个数)</span>
 
 <span class="token comment" spellcheck="true">#re.compile()  	返回一个对象</span>
-obj<span class="token operator">=</span>re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">"\d&amp;#123;2&amp;#125;"</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># re.compile('\\d&amp;#123;2&amp;#125;')</span>
+obj<span class="token operator">=</span>re<span class="token punctuation">.</span>compile<span class="token punctuation">(</span><span class="token string">"\d{2}"</span><span class="token punctuation">)</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># re.compile('\\d{2}')</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['12', '12']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment" spellcheck="true"># 12</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>obj<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"123ab123bc123"</span><span class="token punctuation">)</span><span class="token punctuation">.</span>group<span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">)</span>	<span class="token comment" spellcheck="true"># 12</span>
 </code></pre>
 <p>substitude 替换</p>
-<h4 id="5-非捕获匹配"><a href="#5-非捕获匹配" class="headerlink" title="5. 非捕获匹配?: ?! ?&#x3D;"></a>5. 非捕获匹配?: ?! ?&#x3D;</h4><p><img  srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png" class="lozad post-image"src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png"></p>
+<h4 id="5-非捕获匹配"><a class="markdownIt-Anchor" href="#5-非捕获匹配"></a> 5. 非捕获匹配?: ?! ?=</h4>
+<p><img src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png" alt srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20300%20300'%3E%3C/svg%3E" data-src="/2023/08/24/python%E5%B8%B8%E7%94%A8%E5%BA%93/image-20230823124926567.png" class="lozad post-image"></p>
 <pre class=" language-python"><code class="language-python"><span class="token comment" spellcheck="true"># ?:</span>
-    <span class="token punctuation">(</span>?<span class="token punctuation">:</span><span class="token punctuation">)</span>非捕获分组，只会进行单纯的模式匹配并不会将匹配到的值进行保存，与<span class="token punctuation">(</span><span class="token punctuation">)</span>区分
+	<span class="token punctuation">(</span>?<span class="token punctuation">:</span><span class="token punctuation">)</span>非捕获分组，只会进行单纯的模式匹配并不会将匹配到的值进行保存，与<span class="token punctuation">(</span><span class="token punctuation">)</span>区分
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"jk(loli)+"</span><span class="token punctuation">,</span><span class="token string">"jkloli"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['loli']</span>
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"jk(?:loli)+"</span><span class="token punctuation">,</span><span class="token string">"jkloli"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true"># ['jkloli']</span>
 
 <span class="token comment" spellcheck="true"># ?!	正向否定预查</span>
-    <span class="token number">1</span><span class="token punctuation">.</span>在没匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
-res <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"(?![\d]+$)(?![a-zA-Z]+$)[\da-zA-Z]&amp;#123;6&amp;#125;$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">#匹配6位数字与字母组合，不能纯数字或字母</span>
+	<span class="token number">1</span><span class="token punctuation">.</span>在没匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>match<span class="token punctuation">(</span><span class="token string">"(?![\d]+$)(?![a-zA-Z]+$)[\da-zA-Z]{6}$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
+	<span class="token comment" spellcheck="true">#匹配6位数字与字母组合，不能纯数字或字母</span>
     <span class="token number">2</span><span class="token punctuation">.</span>匹配位置 后面 不能跟着指定表达式。
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"19(?!99)"</span><span class="token punctuation">,</span><span class="token string">"1999"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\d&amp;#123;2&amp;#125;(?!99)"</span><span class="token punctuation">,</span><span class="token string">"1999 1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>#<span class="token punctuation">[</span><span class="token string">'99'</span><span class="token punctuation">,</span> <span class="token string">'19'</span><span class="token punctuation">,</span> <span class="token string">'88'</span><span class="token punctuation">]</span>
-    <span class="token comment" spellcheck="true">#先尝试匹配"1999"，再'999 '(成功)，再"9 19"，再" 198"，再"1988"(成功)，再"88",理解下匹配的窗格移动</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\d{2}(?!99)"</span><span class="token punctuation">,</span><span class="token string">"1999 1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token comment" spellcheck="true">#['99', '19', '88']</span>
+	<span class="token comment" spellcheck="true">#先尝试匹配"1999"，再'999 '(成功)，再"9 19"，再" 198"，再"1988"(成功)，再"88",理解下匹配的窗格移动</span>
     
 <span class="token comment" spellcheck="true"># ?=  正向肯定预查</span>
-    <span class="token number">1</span><span class="token punctuation">.</span>在匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
-res <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"(?=.*[\d])(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[!@#%&amp;])^([\da-zA-Z!@#%&amp;]&amp;#123;7,&amp;#125;)$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true">#至少七位密码，包含大小写，数字，特殊字符(!,@,#,%,&amp;)</span>
+	<span class="token number">1</span><span class="token punctuation">.</span>在匹配到字符串的前提下，再进行后续的正则，后续匹配仍然从被匹配字符串的头开始
+res <span class="token operator">=</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span><span class="token string">"(?=.*[\d])(?=.*[a-z])(?=.*[A-Z])(?=.*)(?=.*[!@#%&amp;])^([\da-zA-Z!@#%&amp;]{7,})$"</span><span class="token punctuation">,</span>passwd<span class="token punctuation">)</span>
+	<span class="token comment" spellcheck="true">#至少七位密码，包含大小写，数字，特殊字符(!,@,#,%,&amp;)</span>
     
     <span class="token number">2</span><span class="token punctuation">.</span>匹配位置 后面 必须跟着指定表达式。
 r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不能匹配foobaz中的foo
     
 
 <span class="token comment" spellcheck="true"># ?&lt;=</span>
-    匹配位置 前面 必须跟着指定表达式。
+	匹配位置 前面 必须跟着指定表达式。
 <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"(?&lt;=jk).*?(?=li)"</span><span class="token punctuation">,</span><span class="token string">"mcjli jkloli liejk"</span><span class="token punctuation">)</span><span class="token punctuation">)</span>   <span class="token comment" spellcheck="true">#['lo']</span>
 
 <span class="token comment" spellcheck="true"># ?&lt;!</span>
-    匹配位置 前面 不能跟着指定表达式。
-    <span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\B(?&lt;!18)\d&amp;#123;2&amp;#125;\\b"</span><span class="token punctuation">,</span><span class="token string">"1988  1899"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #<span class="token punctuation">[</span><span class="token string">'88'</span><span class="token punctuation">]</span>
-    
+	匹配位置 前面 不能跟着指定表达式。
+	<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\B(?&lt;!18)\d{2}\\b"</span><span class="token punctuation">,</span><span class="token string">"1988  1899"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['88']</span>
+	
 </code></pre>
-<h4 id="6-边界匹配问题"><a href="#6-边界匹配问题" class="headerlink" title="6. 边界匹配问题"></a>6. 边界匹配问题</h4><p>\b表示单词边界，\B表示非单词边界</p>
+<h4 id="6-边界匹配问题"><a class="markdownIt-Anchor" href="#6-边界匹配问题"></a> 6. 边界匹配问题</h4>
+<p>\b表示单词边界，\B表示非单词边界</p>
 <blockquote>
 <p>一般空格、换行、标点符号或者特殊符号来表示边界</p>
 </blockquote>
@@ -906,13 +928,15 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
 <blockquote>
 <p>中文字符串为边界的话要用re.A编码模式</p>
 </blockquote>
-<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]&amp;#123;2&amp;#125;)\\b"</span><span class="token punctuation">,</span><span class="token string">"1999  1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> #<span class="token punctuation">[</span><span class="token string">'1988'</span><span class="token punctuation">]</span>
+<pre class=" language-python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]{2})\\b"</span><span class="token punctuation">,</span><span class="token string">"1999  1988"</span><span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token comment" spellcheck="true">#['1988']</span>
 
-<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]&amp;#123;2&amp;#125;)\\b"</span><span class="token punctuation">,</span><span class="token string">"你也玩1999?1988带我一个"</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>A<span class="token punctuation">)</span><span class="token punctuation">)</span>
-    <span class="token comment" spellcheck="true"># ['1988']</span>
+<span class="token keyword">print</span><span class="token punctuation">(</span>re<span class="token punctuation">.</span>findall<span class="token punctuation">(</span><span class="token string">"\\b19(?:[^9]{2})\\b"</span><span class="token punctuation">,</span><span class="token string">"你也玩1999?1988带我一个"</span><span class="token punctuation">,</span>re<span class="token punctuation">.</span>A<span class="token punctuation">)</span><span class="token punctuation">)</span>
+	<span class="token comment" spellcheck="true"># ['1988']</span>
 </code></pre>
-<h3 id="4-request模块"><a href="#4-request模块" class="headerlink" title="4. request模块"></a>4. request模块</h3><p>吐槽：b站王道的计算机网络好水。</p>
-<h3 id="5-time库"><a href="#5-time库" class="headerlink" title="5. time库"></a>5. time库</h3>
+<h3 id="4-request模块"><a class="markdownIt-Anchor" href="#4-request模块"></a> 4. request模块</h3>
+<p>吐槽：b站王道的计算机网络好水。</p>
+<h3 id="5-time库"><a class="markdownIt-Anchor" href="#5-time库"></a> 5. time库</h3>
+
   </div>
   <div>
     
@@ -944,13 +968,13 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
   
     <div class="nav-item-prev">
       <a 
-        href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/" 
+        href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E4%B8%8A/" 
         class="nav-link">
         <i class="iconfont icon-left nav-prev-icon"></i>
         <div>
-          <div class="nav-label">Prev</div>
+          <div class="nav-label">上一篇</div>
           
-            <div class="nav-title">C语言基础 </div>
+            <div class="nav-title">C语言基础-上 </div>
           
         </div>
       </a>
@@ -962,7 +986,7 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
         href="/2023/08/24/%E6%B5%8B%E8%AF%95/" 
         class="nav-link">
         <div>
-          <div class="nav-label">Next</div>
+          <div class="nav-label">下一篇</div>
           
             <div class="nav-title">测试 </div>
           
@@ -980,9 +1004,9 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text"> 常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text"> 1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text"> 数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text"> 三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text"> 数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text"> 2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text"> 3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text"> 1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text"> 2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text"> 5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text"> 6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text"> 4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text"> 5. time库</span></a></li></ol></li></ol>
 </div>
             </main>
             <aside class="right-column">
@@ -994,9 +1018,9 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
   <i 
     class="iconfont icon-menu" 
     style="padding-right: 2px;">
-  </i>TOC
+  </i>目录
 </div>
-<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text">常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text">1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text">数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text">三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text">数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text">2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text">3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text">1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text">3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text">4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text">5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text">6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text">4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text">5. time库</span></a></li></ol></li></ol>
+<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E8%A7%A3%E6%9E%90"><span class="toc-text"> 常见模块解析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-math%E5%BA%93"><span class="toc-text"> 1. math库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%87%BD%E6%95%B0"><span class="toc-text"> 数学函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0"><span class="toc-text"> 三角函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E5%AD%A6%E5%B8%B8%E9%87%8F"><span class="toc-text"> 数学常量</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-random%E5%BA%93"><span class="toc-text"> 2. random库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-re-%E6%A8%A1%E5%9D%97"><span class="toc-text"> 3. re 模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-text"> 1. 常用正则表达式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text"> 2. 常用函数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%AD%A3%E5%88%99%E5%8C%B9%E9%85%8D%E4%BD%BF%E7%94%A8%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 3. 正则匹配使用示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%96%B9%E6%B3%95%E7%A4%BA%E4%BE%8B"><span class="toc-text"> 4. 方法示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-%E9%9D%9E%E6%8D%95%E8%8E%B7%E5%8C%B9%E9%85%8D"><span class="toc-text"> 5. 非捕获匹配?: ?! ?&#x3D;</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-%E8%BE%B9%E7%95%8C%E5%8C%B9%E9%85%8D%E9%97%AE%E9%A2%98"><span class="toc-text"> 6. 边界匹配问题</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-request%E6%A8%A1%E5%9D%97"><span class="toc-text"> 4. request模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-time%E5%BA%93"><span class="toc-text"> 5. time库</span></a></li></ol></li></ol>
     </article>
   
   
@@ -1006,13 +1030,18 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
     <i 
       class="iconfont icon-wenzhang_huaban" 
       style="padding-right: 2px;">
-    </i>Recent Posts
+    </i>最近文章
   </div>
   <div class="recent-posts-list">
     
       <div class="recent-posts-item">
+        <div class="recent-posts-item-title">2023-10-10</div>
+        <a href="/2023/10/10/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E4%B8%8B/"><div class="recent-posts-item-content">C语言基础-下</div></a>
+      </div>
+    
+      <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-10-05</div>
-        <a href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80/"><div class="recent-posts-item-content">C语言基础</div></a>
+        <a href="/2023/10/05/C%E8%AF%AD%E8%A8%80%E5%9F%BA%E7%A1%80-%E4%B8%8A/"><div class="recent-posts-item-content">C语言基础-上</div></a>
       </div>
     
       <div class="recent-posts-item">
@@ -1023,11 +1052,6 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
       <div class="recent-posts-item">
         <div class="recent-posts-item-title">2023-08-24</div>
         <a href="/2023/08/24/%E6%B5%8B%E8%AF%95/"><div class="recent-posts-item-content">测试</div></a>
-      </div>
-    
-      <div class="recent-posts-item">
-        <div class="recent-posts-item-title">2023-08-24</div>
-        <a href="/2023/08/24/%E6%95%B0%E6%8D%AE%E5%BA%93%E5%8E%9F%E7%90%86mysql%E7%89%88/"><div class="recent-posts-item-content">数据库原理mysql版</div></a>
       </div>
     
   </div>
@@ -1135,6 +1159,9 @@ r<span class="token string">"foo(?=bar)"</span>可以匹配foobar中的foo，不
   <i class="iconfont icon-search button-icon"></i>
 </a> 
      
+     
+      
+ 
      
      
       <script>
